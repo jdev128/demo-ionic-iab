@@ -1,14 +1,16 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      OS Movil
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+  <ion-item>
+    <ion-label stacked>PARAMS (Agregar ?): </ion-label>
+    <ion-input id="params" type="text" [(ngModel)]="params"></ion-input>
+  </ion-item>
+  <br>
+  <button ion-button (click)="openBrowser()">Probar Asistencia M&eacute;dica</button>
 </ion-content>

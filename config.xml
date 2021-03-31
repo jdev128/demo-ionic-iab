@@ -12,8 +12,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-intent href="whatsapp:*" />
-    <allow-navigation href="tel:*" />
-    <allow-navigation href="whatsapp:*" />
+    <allow-intent href="market:*" />
     <preference name="ScrollEnabled" value="false" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashMaintainAspectRatio" value="true" />

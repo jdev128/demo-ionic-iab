@@ -8,7 +8,18 @@
 
 <ion-content padding>
   <ion-item>
-    <ion-label stacked>PARAMS (Agregar ?): </ion-label>
+    <ion-label for="environment" stacked>ENTORNO (ionic serve --external para pruebas locales)</ion-label>
+    <ion-select id="environment" type="text" [(ngModel)]="environment">
+      <ion-option value="dev">Desarrollo</ion-option>
+      <ion-option value="local">Local</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item *ngIf="environment === 'local'">
+    <ion-label for="localHost" stacked>IP Local (ajustala de ser necesario):</ion-label>
+    <ion-input id="localHost" type="text" [(ngModel)]="localURL"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label for="params" stacked>QUERY PARAMS (Separados por &):</ion-label>
     <ion-input id="params" type="text" [(ngModel)]="params"></ion-input>
   </ion-item>
   <br>

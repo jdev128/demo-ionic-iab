@@ -10,6 +10,7 @@
   <ion-item>
     <ion-label for="environment" stacked>ENTORNO (ionic serve --external para pruebas locales)</ion-label>
     <ion-select id="environment" type="text" [(ngModel)]="environment">
+      <ion-option value="test">Testing</ion-option>
       <ion-option value="dev">Desarrollo</ion-option>
       <ion-option value="local">Local</ion-option>
     </ion-select>

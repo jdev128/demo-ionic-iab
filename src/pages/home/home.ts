@@ -11,6 +11,7 @@ export class HomePage {
   environment: string;
 
   devURL = 'https://app-socios-frontend-jmmsnlcpta-uc.a.run.app';
+  testURL = 'https://app-socios-frontend-zrvedpo66q-uc.a.run.app/';
   localURL = 'http://192.168.0.1:8100';
 
   params: string;
@@ -22,7 +23,14 @@ export class HomePage {
   }
 
   openBrowser() {
-    let host = this.environment === 'dev'? this.devURL : this.localURL;
+    let host;
+    if (this.environment === 'dev') {
+      host = this.devURL;
+    } else if (this.environment === 'test') {
+      host = this.testURL;
+    } else {
+      host = this.localURL;
+    }
     let url = this.params? host + "/tabs/inicio?" + this.params : host;
     this.browser = this.iab.create(url, "_blank", "location=no");
     this.browser.on("message").subscribe(message => {
